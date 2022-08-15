@@ -1,0 +1,168 @@
+
+.sidebar {
+  width:250px;
+  height: 100vh;
+  background: rgb(255, 255, 255);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width ease-in-out 0.3s;
+  /* position: sticky; */
+}
+.sidebar::-webkit-scrollbar {
+    display: none;
+  }
+.sidebar.off{
+    width: 80px;
+}
+
+.sidebarlogo{
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    display: flex;
+    /* position: absolute; */
+}
+.sidebarlogo.off{
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+
+}
+.sidebarlogo >img{
+    /* width: 100px; */
+    max-height: 30px;
+}
+
+
+.sidebarcotainer {
+  padding-right : 20px;
+  padding-left : 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  box-sizing: border-box; 
+}
+
+.sidebarcotainer.min {
+    padding: 5px;
+}
+
+.sidebarcotainer.min.active {
+    border-left: 5px black solid;
+    padding-left: 0px;
+}
+
+.sidebarcotainer.active{
+    border-left: 5px black solid;
+    padding-left : 15px;
+    
+}
+
+.sidebararrow{
+    transform: rotate(180deg);
+    transition: ease-in-out 0.2s;
+}
+
+.sidebararrow.open{
+    transform: rotate(0deg);
+}
+
+.sidebarbutton{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebarbutton.min {
+    justify-content: center;
+}
+
+.sidebarbutton:hover{
+    background-color: rgb(231, 231, 231);
+}
+.sidebartextlogo{
+    display: flex;
+    align-items: center;
+}
+.sidebartextlogo > span{
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.sidebartextlogo > img{
+    width: 25px;
+    background-color: black;
+}
+.sidebaritem{
+    display: flex;
+    flex-direction: column;
+}
+.sidebarchild{
+    overflow: hidden;
+    background-color: white;
+}
+
+.sidebarchild.min{
+    position: absolute;
+    left: 80px;
+}
+
+.sidebarchild.close{
+    max-height: 0px;
+}
+
+.sidebarspan{
+    padding: 10px 30px 10px 30px;
+    font-weight: 700;
+    color: rgb(138, 138, 138);
+    display: flex;
+
+}
+
+.sidebarspan.min{
+    display: none;
+}
+
+.sidebarxbutton{
+    height: 40px;
+    background-color: white;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    /* position: fixed; */
+}
+
+.sidebarxbutton > span{
+    width: 50%;
+    height: 3px;
+    background: #000;
+    border-radius: 5px;
+    position: absolute;
+    margin-right: 2px;
+    margin-left: 2px;
+    transition: all ease-in-out 0.2s;
+}
+
+.x1 {
+  transform : translateY(-6px)
+}
+.x3 {
+  transform : translateY(6px)
+}
+
+.sidebarxbutton.off > .x1{
+    transform: rotate(45deg);
+}
+.sidebarxbutton.off > .x2{
+    opacity: 0;
+}
+.sidebarxbutton.off > .x3{
+    transform: rotate(-45deg);
+}
