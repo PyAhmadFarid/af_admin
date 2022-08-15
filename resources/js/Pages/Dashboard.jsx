@@ -1,8 +1,8 @@
 import Admin from "@/Layouts/Admin";
 import { ResponsiveLine } from "@nivo/line";
 import "./Dashboard.css";
-import ArrowButton from "@/Components/ArrowButton";
-import { useState } from "react";
+
+import CardWindow from "@/Components/CardWindow";
 
 const data = [
     {
@@ -277,20 +277,12 @@ const data = [
     },
 ];
 
-const CardWindow = ({ title, children }) => {
-    const [open,setOpen] = useState(true);
+const PopularPost = ({ rank, count, children }) => {
     return (
-        <div className="cardwindow">
-            <div className="cardwindownav">
-                <div className="cardwindowtitle">{title}</div>
-                <div className="cardwindowtool">
-                    <button onClick={()=>{setOpen(!open)}}>
-                        <ArrowButton open={open}/>
-                    </button>
-                </div>
-            </div>
-
-            <div className={"cardwindowbody "+(open?"":"close")}>{children}</div>
+        <div className="popularpost">
+            <div className={"popularpostrank rank-" + rank}>{rank || ""}</div>
+            <div className="popularposttitle">{children}</div>
+            <div className="popularpostcount">{count}</div>
         </div>
     );
 };
@@ -298,85 +290,196 @@ const CardWindow = ({ title, children }) => {
 const Dashboard = (props) => {
     return (
         <div className="row">
-            <div style={{ flex: 2 }}>
-                <CardWindow title="Visitor Graph">
-                    <div className="h-80">
-                        <ResponsiveLine
-                            data={data}
-                            margin={{
-                                top: 50,
-                                right: 110,
-                                bottom: 50,
-                                left: 60,
-                            }}
-                            xScale={{ type: "point" }}
-                            yScale={{
-                                type: "linear",
-                                min: "auto",
-                                max: "auto",
-                                stacked: true,
-                                reverse: false,
-                            }}
-                            yFormat=" >-.2f"
-                            axisTop={null}
-                            axisRight={null}
-                            axisBottom={{
-                                orient: "bottom",
-                                tickSize: 5,
-                                tickPadding: 5,
-                                tickRotation: 0,
-                                legend: "transportation",
-                                legendOffset: 36,
-                                legendPosition: "middle",
-                            }}
-                            axisLeft={{
-                                orient: "left",
-                                tickSize: 5,
-                                tickPadding: 5,
-                                tickRotation: 0,
-                                legend: "count",
-                                legendOffset: -40,
-                                legendPosition: "middle",
-                            }}
-                            pointSize={10}
-                            pointColor={{ theme: "background" }}
-                            pointBorderWidth={2}
-                            pointBorderColor={{ from: "serieColor" }}
-                            pointLabelYOffset={-12}
-                            useMesh={true}
-                            legends={[
-                                {
-                                    anchor: "bottom-right",
-                                    direction: "column",
-                                    justify: false,
-                                    translateX: 100,
-                                    translateY: 0,
-                                    itemsSpacing: 0,
-                                    itemDirection: "left-to-right",
-                                    itemWidth: 80,
-                                    itemHeight: 20,
-                                    itemOpacity: 0.75,
-                                    symbolSize: 12,
-                                    symbolShape: "circle",
-                                    symbolBorderColor: "rgba(0, 0, 0, .5)",
-                                    effects: [
-                                        {
-                                            on: "hover",
-                                            style: {
-                                                itemBackground:
-                                                    "rgba(0, 0, 0, .03)",
-                                                itemOpacity: 1,
+            <div style={{ flex: 2 ,display:'flex',flexDirection:'column'}}>
+                <div>
+                    <CardWindow title="Visitor Rate">
+                        <div>
+                            <select name="" id="">
+                                <option value="">month</option>
+                                <option value="">days</option>
+                                <option value="">years</option>
+                            </select>
+                            <input type="text" />
+                        </div>
+                        <div className="h-80">
+                            <ResponsiveLine
+                                data={data}
+                                margin={{
+                                    top: 50,
+                                    right: 110,
+                                    bottom: 50,
+                                    left: 60,
+                                }}
+                                xScale={{ type: "point" }}
+                                yScale={{
+                                    type: "linear",
+                                    min: "auto",
+                                    max: "auto",
+                                    stacked: true,
+                                    reverse: false,
+                                }}
+                                yFormat=" >-.2f"
+                                axisTop={null}
+                                axisRight={null}
+                                axisBottom={{
+                                    orient: "bottom",
+                                    tickSize: 5,
+                                    tickPadding: 5,
+                                    tickRotation: 0,
+                                    legend: "transportation",
+                                    legendOffset: 36,
+                                    legendPosition: "middle",
+                                }}
+                                axisLeft={{
+                                    orient: "left",
+                                    tickSize: 5,
+                                    tickPadding: 5,
+                                    tickRotation: 0,
+                                    legend: "count",
+                                    legendOffset: -40,
+                                    legendPosition: "middle",
+                                }}
+                                pointSize={10}
+                                pointColor={{ theme: "background" }}
+                                pointBorderWidth={2}
+                                pointBorderColor={{ from: "serieColor" }}
+                                pointLabelYOffset={-12}
+                                useMesh={true}
+                                legends={[
+                                    {
+                                        anchor: "bottom-right",
+                                        direction: "column",
+                                        justify: false,
+                                        translateX: 100,
+                                        translateY: 0,
+                                        itemsSpacing: 0,
+                                        itemDirection: "left-to-right",
+                                        itemWidth: 80,
+                                        itemHeight: 20,
+                                        itemOpacity: 0.75,
+                                        symbolSize: 12,
+                                        symbolShape: "circle",
+                                        symbolBorderColor: "rgba(0, 0, 0, .5)",
+                                        effects: [
+                                            {
+                                                on: "hover",
+                                                style: {
+                                                    itemBackground:
+                                                        "rgba(0, 0, 0, .03)",
+                                                    itemOpacity: 1,
+                                                },
                                             },
-                                        },
-                                    ],
-                                },
-                            ]}
-                        />
-                    </div>
-                </CardWindow>
+                                        ],
+                                    },
+                                ]}
+                            />
+                        </div>
+                    </CardWindow>
+                </div>
+                <div>
+                    <CardWindow title="Comments">
+                        <div>
+                            <select name="" id="">
+                                <option value="">month</option>
+                                <option value="">days</option>
+                                <option value="">years</option>
+                            </select>
+                            <input type="text" />
+                        </div>
+                        <div className="h-80">
+                            <ResponsiveLine
+                                data={data}
+                                margin={{
+                                    top: 50,
+                                    right: 110,
+                                    bottom: 50,
+                                    left: 60,
+                                }}
+                                xScale={{ type: "point" }}
+                                yScale={{
+                                    type: "linear",
+                                    min: "auto",
+                                    max: "auto",
+                                    stacked: true,
+                                    reverse: false,
+                                }}
+                                yFormat=" >-.2f"
+                                axisTop={null}
+                                axisRight={null}
+                                axisBottom={{
+                                    orient: "bottom",
+                                    tickSize: 5,
+                                    tickPadding: 5,
+                                    tickRotation: 0,
+                                    legend: "transportation",
+                                    legendOffset: 36,
+                                    legendPosition: "middle",
+                                }}
+                                axisLeft={{
+                                    orient: "left",
+                                    tickSize: 5,
+                                    tickPadding: 5,
+                                    tickRotation: 0,
+                                    legend: "count",
+                                    legendOffset: -40,
+                                    legendPosition: "middle",
+                                }}
+                                pointSize={10}
+                                pointColor={{ theme: "background" }}
+                                pointBorderWidth={2}
+                                pointBorderColor={{ from: "serieColor" }}
+                                pointLabelYOffset={-12}
+                                useMesh={true}
+                                legends={[
+                                    {
+                                        anchor: "bottom-right",
+                                        direction: "column",
+                                        justify: false,
+                                        translateX: 100,
+                                        translateY: 0,
+                                        itemsSpacing: 0,
+                                        itemDirection: "left-to-right",
+                                        itemWidth: 80,
+                                        itemHeight: 20,
+                                        itemOpacity: 0.75,
+                                        symbolSize: 12,
+                                        symbolShape: "circle",
+                                        symbolBorderColor: "rgba(0, 0, 0, .5)",
+                                        effects: [
+                                            {
+                                                on: "hover",
+                                                style: {
+                                                    itemBackground:
+                                                        "rgba(0, 0, 0, .03)",
+                                                    itemOpacity: 1,
+                                                },
+                                            },
+                                        ],
+                                    },
+                                ]}
+                            />
+                        </div>
+                    </CardWindow>
+                </div>
             </div>
             <div style={{ flex: 1 }}>
-                <CardWindow title="Popular Post">sas</CardWindow>
+                <CardWindow title="Popular Post">
+                    <PopularPost rank="1" count={8151}>
+                        Berjayalah padamu
+                    </PopularPost>
+                    <PopularPost rank="2" count={5360}>
+                        Qunatum mecanic effect
+                    </PopularPost>
+                    <PopularPost rank="3" count={400}>
+                        Bioluminacens
+                    </PopularPost>
+                    <PopularPost count={200}>
+                        Nihilistic view of the world
+                    </PopularPost>
+                    <PopularPost count={200}>world whitout order</PopularPost>
+                    <PopularPost count={200}>world whitout order</PopularPost>
+                    <PopularPost count={200}>world whitout order</PopularPost>
+                </CardWindow>
             </div>
         </div>
     );

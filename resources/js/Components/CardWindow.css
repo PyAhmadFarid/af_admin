@@ -1,0 +1,27 @@
+
+.cardwindow{
+    background: white;
+    margin: 10px;
+}
+
+
+.cardwindownav {
+    border-left: 5px black solid;
+    padding: 5px 20px 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardwindowtitle{
+    font-weight: 900;
+    /* font-size: larger; */
+
+}
+
+.cardwindowbody {
+  overflow: hidden;
+}
+.cardwindowbody.close{
+    height: 0px;
+}

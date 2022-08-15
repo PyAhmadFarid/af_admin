@@ -1,31 +1,69 @@
 
 
-.cardwindow{
-    background: white;
-    margin: 10px;
-}
-
-
-.cardwindownav {
-    border-left: 5px black solid;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.cardwindowtitle{
-    font-weight: 900;
-
-}
-
-.cardwindowbody {
-  overflow: hidden;
-}
-.cardwindowbody.close{
-    height: 0px;
-}
 .row{
     display: flex;
     width: 100%;
+}
+
+
+.popularpost{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    font-weight: bolder;
+
+    border-bottom: 1px rgb(201, 201, 201) solid;
+    
+}
+.popularpost:hover{
+    background: rgb(240, 247, 255);
+}
+
+.popularpostrank{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(235, 235, 235);
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.rank-1{
+    background: #ffd700;
+}
+.rank-2{
+    background: #c0c0c0;
+}
+.rank-3{
+    background: #CD7f32;
+}
+
+.popularposttitle{
+    flex: 1;
+    /* width: 100px; */
+    /* align-items: center; */
+    
+    display: inline;
+    align-items: center;
+    padding-left: 20px;
+    margin-right: 20px;
+    margin-left: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: small;
+    
+
+}
+
+.popularpostcount{
+    font-size: smaller;
+    color: gray;
 }

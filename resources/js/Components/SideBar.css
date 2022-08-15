@@ -1,6 +1,6 @@
 
 .sidebar {
-  width:250px;
+  width:200px;
   height: 100vh;
   background: rgb(255, 255, 255);
   overflow-y: auto;
@@ -37,8 +37,8 @@
 .sidebarcotainer {
   padding-right : 20px;
   padding-left : 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  /* margin-top: 5px; */
+  /* margin-bottom: 5px; */
 
   box-sizing: border-box; 
 }
@@ -83,6 +83,7 @@
 .sidebartextlogo > span{
     margin-left: 10px;
     font-weight: 700;
+    font-size: small
 }
 
 .sidebartextlogo > img{
@@ -101,6 +102,7 @@
 .sidebarchild.min{
     position: absolute;
     left: 80px;
+    z-index: 10;
 }
 
 .sidebarchild.close{
@@ -112,6 +114,7 @@
     font-weight: 700;
     color: rgb(138, 138, 138);
     display: flex;
+    
 
 }
 
@@ -142,6 +145,7 @@
     margin-left: 2px;
     transition: all ease-in-out 0.2s;
     z-index: 100;
+
 }
 
 .x1 {

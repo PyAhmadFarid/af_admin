@@ -12,7 +12,10 @@ import {
 
 const Admin = ({ title, children }) => {
     const [sideHide, setSideHide] = useState(false);
-
+    const [navHide,setNavHide] = useState(true);
+    let out = useClickOutside(()=>{
+        setNavHide(true);
+    });
     // const [route,setRoute] = useState(route().current());
 
     return (
@@ -123,7 +126,7 @@ const Admin = ({ title, children }) => {
             </SideBar>
             <div className="content">
                 <div className="navbar">
-                    <div >
+                    <div>
                         <SideBarXButton
                             active={sideHide}
                             setActive={setSideHide}
@@ -137,15 +140,22 @@ const Admin = ({ title, children }) => {
                                 data-name="Layer 1"
                                 viewBox="0 0 24 24"
                                 width="25px"
-                            >   
+                            >
                                 <path
                                     fill="#454545"
                                     d="M18,13.18V10a6,6,0,0,0-5-5.91V3a1,1,0,0,0-2,0V4.09A6,6,0,0,0,6,10v3.18A3,3,0,0,0,4,16v2a1,1,0,0,0,1,1H8.14a4,4,0,0,0,7.72,0H19a1,1,0,0,0,1-1V16A3,3,0,0,0,18,13.18ZM8,10a4,4,0,0,1,8,0v3H8Zm4,10a2,2,0,0,1-1.72-1h3.44A2,2,0,0,1,12,20Zm6-3H6V16a1,1,0,0,1,1-1H17a1,1,0,0,1,1,1Z"
                                 />
                             </svg>
                         </div>
-                        <div className="profile">
-                            <img src="/images/profile.jpg" alt="" />
+                        <div ref={out} className="profilebody">
+                            <button className="profile" onClick={()=>{setNavHide(!navHide)}}>
+                                <img src="/images/profile.jpg" alt="" />
+                            </button>
+                            <div className={"profiledrop "+(navHide?"hide":"")}>
+                                <SideBarItem title={"profile"}/>
+                                <SideBarItem title={"setting"}/>
+                                <SideBarItem title={"logout"}/>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,7 @@
     box-sizing: border-box;
     flex: 1;
     overflow-x: auto;
-    background: rgb(236, 236, 236);
+    background: rgb(247, 247, 247);
     position: relative;
     /* padding: 30px; */
 }
@@ -62,4 +62,23 @@
 .profile > img{
     width: 100%;
 
+}
+.profilebody{
+    position: relative;
+}
+
+.profiledrop{
+    position: absolute;
+    background-color: white;
+    right: 10px;
+    top:60px;
+    box-shadow: 5px;
+    overflow: hidden;
+    max-height: 200px;
+    transition: all ease-in-out 0.2s;
+
+}
+
+.profiledrop.hide{
+    max-height: 0px;
 }
