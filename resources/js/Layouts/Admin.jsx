@@ -123,12 +123,12 @@ const Admin = ({ title, children }) => {
             </SideBar>
             <div className="content">
                 <div className="navbar">
-                    <div>
+                    <div >
                         <SideBarXButton
                             active={sideHide}
                             setActive={setSideHide}
                         />
-                        <div className="navbartitle">Dashboard</div>
+                        <div className="navbartitle">Admin P</div>
                     </div>
                     <div>
                         <div className="bell">
