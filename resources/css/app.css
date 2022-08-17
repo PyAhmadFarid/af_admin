@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body{
+    --background : rgb(255, 255, 255);
+    --foreground : rgb(243, 243, 243);
+    --accent-color : rgb(12, 29, 24);
+    --text : rgb(8, 37, 29);
+}
+
+body#dark{
+    --background : #18363c;
+    --foreground : #122d33;
+    --accent-color : rgb(2, 221, 155);
+    --text : rgb(205, 255, 241);
+}
+
+svg{
+    color : var(--accent-color)
+}

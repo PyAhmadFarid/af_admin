@@ -16,7 +16,8 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Main');
+    
+    return view('test');
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {

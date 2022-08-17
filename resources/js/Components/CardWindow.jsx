@@ -20,7 +20,7 @@ const CardWindow = ({ title, children }) => {
             </div>
 
             <div className={"cardwindowbody " + (open ? "" : "close")}>
-                <div style={{padding:"20px",paddingBottom:"40px"}}>{children}</div>
+                <div style={{padding:"0px",paddingBottom:"40px"}}>{children}</div>
             </div>
         </div>
     );

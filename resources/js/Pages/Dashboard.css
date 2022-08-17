@@ -17,11 +17,12 @@
     cursor: pointer;
     font-weight: bolder;
 
-    border-bottom: 1px rgb(201, 201, 201) solid;
+    border-bottom: 1px var(--foreground) solid;
+    
     
 }
 .popularpost:hover{
-    background: rgb(240, 247, 255);
+    background: var(--foreground);
 }
 
 .popularpostrank{
@@ -30,18 +31,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(235, 235, 235);
+    background-color: var(--accent-color);
+    opacity: 0.2;
     border-radius: 10px;
     font-weight: bolder;
+    color: var(--text);
 }
 
 .rank-1{
+    opacity: 1;
     background: #ffd700;
 }
 .rank-2{
+    opacity: 1;
     background: #c0c0c0;
 }
 .rank-3{
+    opacity: 1;
     background: #CD7f32;
 }
 
@@ -65,5 +71,41 @@
 
 .popularpostcount{
     font-size: smaller;
-    color: gray;
+    color: var(--text);
+}
+
+.form {
+  display:flex;
+}
+.formgroup{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.formgroup > span{
+    font-size: small;
+    font-weight: 800;
+    /* margin-right: 20px; */
+}
+
+.inp {
+  padding-top:3px;
+  padding-bottom:3px;
+  border-radius: 5px;
+  /* background: rgb(223, 223, 223); */
+  /* border: none; */
+  border: 1px #c0c0c0 solid;
+  color: var(--text);
+  background: var(--foreground);
+}
+
+.btn{
+    background: rgb(0, 128, 85);
+    padding: 3px 10px 3px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+
 }

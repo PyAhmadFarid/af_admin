@@ -2,7 +2,7 @@
 .sidebar {
   width:200px;
   height: 100vh;
-  background: rgb(255, 255, 255);
+  background: var(--background);
   overflow-y: auto;
   overflow-x: hidden;
   transition: width ease-in-out 0.3s;
@@ -18,7 +18,10 @@
 .sidebarlogo{
     display: flex;
     align-items: center;
-    padding: 30px;
+    /* padding: 30px; */
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 30px;
     display: flex;
     /* position: absolute; */
 }
@@ -28,9 +31,20 @@
     padding: 20px;
 
 }
-.sidebarlogo >img{
+.sidebarlogo >svg{
     /* width: 100px; */
-    max-height: 30px;
+    min-height: 30px;
+}
+
+.sidebarlogo > span{
+    font-size: x-large;
+    font-weight: bolder;
+    margin-left: 10px;
+    color: var(--accent-color);
+}
+
+.sidebarlogo.off > span{
+    display: none;
 }
 
 
@@ -48,12 +62,11 @@
 }
 
 .sidebarcotainer.min.active {
-    border-left: 5px black solid;
     padding-left: 0px;
 }
 
 .sidebarcotainer.active{
-    border-left: 5px black solid;
+    border-left: 5px var(--accent-color) solid;
     padding-left : 15px;
     
 }
@@ -74,11 +87,12 @@
 }
 
 .sidebarbutton:hover{
-    background-color: rgb(231, 231, 231);
+    background-color: var(--foreground)
 }
 .sidebartextlogo{
     display: flex;
     align-items: center;
+    color: var(--text);
 }
 .sidebartextlogo > span{
     margin-left: 10px;
@@ -86,9 +100,8 @@
     font-size: small
 }
 
-.sidebartextlogo > img{
-    width: 25px;
-    background-color: black;
+.sidebartextlogo > svg{
+    width: 30px;
 }
 .sidebaritem{
     display: flex;
@@ -96,7 +109,7 @@
 }
 .sidebarchild{
     overflow: hidden;
-    background-color: white;
+    background-color: var(--background);;
 }
 
 .sidebarchild.min{
@@ -112,7 +125,7 @@
 .sidebarspan{
     padding: 10px 30px 10px 30px;
     font-weight: 700;
-    color: rgb(138, 138, 138);
+    color: var(--text);
     display: flex;
     
 
@@ -124,21 +137,22 @@
 
 .sidebarxbutton{
     height: 40px;
-    background-color: white;
+    background-color: var(--foreground);
     width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 10px;
+    padding: 5px;
     cursor: pointer;
+    margin-left: 10px;
     /* position: fixed; */
 }
 
 .sidebarxbutton > span{
     width: 50%;
     height: 3px;
-    background: #000;
+    background: var(--accent-color);
     border-radius: 5px;
     position: absolute;
     margin-right: 2px;
