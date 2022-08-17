@@ -96,7 +96,7 @@
   border-radius: 5px;
   /* background: rgb(223, 223, 223); */
   /* border: none; */
-  border: 1px #c0c0c0 solid;
+  border: 1px var(--secondary) solid;
   color: var(--text);
   background: var(--foreground);
 }

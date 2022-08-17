@@ -279,7 +279,9 @@ const data = [
 const PopularPost = ({ rank, count, children }) => {
     return (
         <div className="popularpost">
-            <div className={"popularpostrank rank-" + rank}>{rank || ""}</div>
+            <div className={"popularpostrank rank-" + rank}>
+                {rank == "1"?(<>&#x1F947;</>):rank == "2"?(<>&#x1F948;</>):rank == "3"?(<>&#x1F949;</>):""}
+            </div>
             <div className="popularposttitle">{children}</div>
             <div className="popularpostcount">{count}</div>
         </div>
@@ -338,11 +340,11 @@ const Dashboard = (props) => {
                                                 stroke: "var(--foreground)",
                                             },
                                         },
-                                        tooltip:{
-                                            container:{
-                                                background:"var(--background)"
-                                            }
-                                        }
+                                        tooltip: {
+                                            container: {
+                                                background: "var(--background)",
+                                            },
+                                        },
                                     }}
                                     yFormat=" >-.2f"
                                     axisTop={null}
@@ -406,12 +408,13 @@ const Dashboard = (props) => {
                 </div>
                 <div>
                     <CardWindow title="Comments">
-                        <div className="a" style={{padding:'20px'}}>
+                        <div className="a" style={{ padding: "20px" }}>
                             Lorem ipsum dolor, sit amet consectetur adipisicing
                             elit. Ullam mollitia alias nulla vel a eligendi modi
                             asperiores rem necessitatibus nesciunt, incidunt
                             esse, praesentium illum minus minima maiores porro,
-                            possimus dolor?
+                            possimus dolor? &#128150;
+                            &#x1F9DC;&#x200D;&#x2640;&#xFE0F;
                         </div>
                     </CardWindow>
                 </div>
